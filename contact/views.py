@@ -1,3 +1,4 @@
-from django.shortcuts import render
+from django.http import JsonResponse
 
-# Create your views here.
+def api_contact (request, *args, **kwarg):
+    return JsonResponse({"message" : "Hello there, this is your Django API Response!!"})
