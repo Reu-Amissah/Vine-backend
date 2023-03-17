@@ -2,6 +2,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import ContactInfo
 from .serializers import ContactInfoSerializer
+from django.http import JsonResponse
 
 @api_view (['GET'])
 def contact_message(request):
@@ -17,3 +18,8 @@ def contact_post(request):
         serializer.save()
 
     return Response (serializer.data)
+
+@api_view (['GET'])
+def endpoints(request):
+    data = ['/contacts', '/contact-post']
+    return Response(data)

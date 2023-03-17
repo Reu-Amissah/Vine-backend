@@ -5,6 +5,7 @@ from . import views
 # from .views import api_contact
 
 urlpatterns = [
-    path('', views.contact_message),
+    path('', views.endpoints),
+    path('contacts/', views.contact_message),
     path('contact-post/', views.contact_post),
 ]
